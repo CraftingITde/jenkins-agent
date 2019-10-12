@@ -14,8 +14,11 @@ jobs:
   include:
     - stage: build 
       script: docker build -t agent-docker Container/docker/ 
+    -  
       script: docker build -t agent-javamaven Container/javamaven/ 
+    -
       script: docker build -t agent-nodejs Container/nodejs/ 
+    -
       script: docker build -t agent-yarn Container/yarn/ 
     - stage: dev-deploy 
       script: .ci/docker_push_dev.sh 
