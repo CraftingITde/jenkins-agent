@@ -2,7 +2,7 @@
 # jenkins-agent-docker 
 ![](https://badgen.net/docker/pulls/craftingit/jenkins-agent-docker?icon=docker&label=pulls)
 ![](https://badgen.net/docker/stars/craftingit/jenkins-agent-docker?icon=docker&label=stars)
-![](https://badgen.net/github/release/craftingitde/jenkins-agent-docker/stable)
+![](https://badgen.net/github/release/craftingitde/jenkins-agent/stable)
 
 Extension of the [JenkinsCI/docker-slave](https://github.com/jenkinsci/docker-slave) repository.
 

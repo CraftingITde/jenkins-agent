@@ -3,8 +3,20 @@ language: bash
 services:
   - docker
 
-script:
-  - docker build -t agent-docker Container/docker/ 
+jobs:
+include:
+  - stage: build docker
+    script:
+      - docker build -t agent-docker Container/docker/ 
+  - stage: build javamaven
+    script:
+      - docker build -t agent-docker Container/javamaven/ 
+  - stage: build javamaven
+    script:
+      - docker build -t agent-docker Container/javamaven/ 
+  - stage: build yarn
+    script:
+      - docker build -t agent-docker Container/yarn/ 
 
 deploy:
   - provider: script
