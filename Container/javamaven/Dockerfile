@@ -4,6 +4,10 @@ LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 USER root
 
+
+#Fix Apt Cache
+RUN rm -rf /var/lib/apt/lists/* 
+
 RUN apt-get update && \ 
     apt-get install -y \
                     --no-install-recommends \

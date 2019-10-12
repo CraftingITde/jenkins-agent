@@ -4,6 +4,9 @@ LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 # Install
 USER root
 
+#Fix Apt Cache
+RUN rm -rf /var/lib/apt/lists/* 
+
 #Base
 RUN apt-get update && \ 
     apt-get install -y \
