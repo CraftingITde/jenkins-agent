@@ -4,20 +4,13 @@ services:
   - docker
 
 jobs:
-include:
-  - stage: build docker
-    script:
-      - docker build -t agent-docker Container/docker/ 
-  - stage: build javamaven
-    script:
-      - docker build -t agent-docker Container/javamaven/ 
-  - stage: build javamaven
-    script:
-      - docker build -t agent-docker Container/javamaven/ 
-  - stage: build yarn
-    script:
-      - docker build -t agent-docker Container/yarn/ 
-
+  include:
+    - stage: build 
+      script: docker build -t agent-docker Container/docker/ 
+      script: docker build -t agent-docker Container/javamaven/ 
+      script: docker build -t agent-docker Container/nodejs/ 
+      script: docker build -t agent-docker Container/yarn/ 
+      
 deploy:
   - provider: script
     script: bash .ci/docker_push_dev.sh
