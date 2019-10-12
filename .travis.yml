@@ -11,12 +11,11 @@ script:
 
 deploy:
   - provider: script
-    env: TRAVIS_TAG=dev
-    script: bash .ci/docker_push_tag.sh 
+    script: .ci/docker_push_dev.sh 
     on:
       branch: master
 
   - provider: script
-    script: bash docker_push_tag.sh
+    script: .ci/docker_push_tag.sh
     on:
       tags: true
