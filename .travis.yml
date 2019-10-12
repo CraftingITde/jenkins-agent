@@ -21,6 +21,7 @@ jobs:
     -
       script: docker build -t agent-yarn Container/yarn/ 
     - stage: dev-deploy 
-      script: .ci/docker_push_dev.sh 
+      env: TRAVIS_TAG=dev
+      script: bash .ci/docker_push_tag.sh 
     - stage: deploy 
-      script: ci/docker_push_tag.sh 
+      script: bash .ci/docker_push_tag.sh 
