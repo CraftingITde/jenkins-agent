@@ -1,1 +1,1 @@
-# jenkins-agent
+# jenkins-agent [![Build Status](https://travis-ci.com/CraftingITde/jenkins-agent.svg?branch=master)](https://travis-ci.com/CraftingITde/jenkins-agent) ![](https://badgen.net/github/release/craftingitde/jenkins-agent/stable)
