@@ -3,13 +3,6 @@ language: bash
 services:
   - docker
 
-stages:
-  - build
-  - name: dev-deploy
-    if: branch = master
-  - name: deploy
-    if: tags = true
-
 jobs:
   include:
     - stage: build 
@@ -21,7 +14,9 @@ jobs:
     -
       script: docker build -t agent-yarn Container/yarn/ 
     - stage: dev-deploy 
+      if: branch = master
       env: TRAVIS_TAG=dev
       script: bash .ci/docker_push_tag.sh 
     - stage: deploy 
+      if: tags = true
       script: bash .ci/docker_push_tag.sh 
