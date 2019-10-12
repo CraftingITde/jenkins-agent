@@ -3,20 +3,20 @@ language: bash
 services:
   - docker
 
-jobs:
-  include:
-    - stage: build 
-      script: docker build -t agent-docker Container/docker/ 
-    -  
-      script: docker build -t agent-javamaven Container/javamaven/ 
-    -
-      script: docker build -t agent-nodejs Container/nodejs/ 
-    -
-      script: docker build -t agent-yarn Container/yarn/ 
-    - stage: dev-deploy 
-      if: branch = master
-      env: TRAVIS_TAG=dev
-      script: bash .ci/docker_push_tag.sh 
-    - stage: deploy 
-      if: tags = true
-      script: bash .ci/docker_push_tag.sh 
+script:
+- docker build -t agent-docker Container/docker/ 
+- docker build -t agent-javamaven Container/javamaven/ 
+- docker build -t agent-nodejs Container/nodejs/ 
+- docker build -t agent-yarn Container/yarn/ 
+
+deploy:
+  - provider: script
+    env: TRAVIS_TAG=dev
+    script: bash .ci/docker_push_tag.sh 
+    on:
+      branch: master
+
+  - provider: script
+    script: bash docker_push_tag.sh
+    on:
+      tags: true
