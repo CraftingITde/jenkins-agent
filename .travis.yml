@@ -3,6 +3,13 @@ language: bash
 services:
   - docker
 
+stages:
+  - build
+  - name: dev-deploy
+    if: branch = master
+  - name: deploy
+    if: tags = true
+
 jobs:
   include:
     - stage: build 
@@ -10,14 +17,7 @@ jobs:
       script: docker build -t agent-javamaven Container/javamaven/ 
       script: docker build -t agent-nodejs Container/nodejs/ 
       script: docker build -t agent-yarn Container/yarn/ 
-
-deploy:
-  - provider: script
-    script: bash .ci/docker_push_dev.sh
-    on:
-      branch: master
-
-  - provider: script
-    script: bash .ci/docker_push_tag.sh
-    on:
-      tags: true
+    - stage: dev-deploy 
+      script: .ci/docker_push_dev.sh 
+    - stage: deploy 
+      script: ci/docker_push_tag.sh 
