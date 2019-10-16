@@ -6,7 +6,7 @@
 Extension of the [JenkinsCI/docker-slave](https://github.com/jenkinsci/docker-slave) repository.
 
 ## Sample configuration
-````yaml
+```yaml
 agent_yarn:
     image: craftingit/jenkins-agent-yarn
     restart: always
