@@ -11,12 +11,12 @@ RUN rm -rf /var/lib/apt/lists/*
 #Base
 RUN apt-get update && \ 
     apt-get install -y \
-                    curl  \
-                    p7zip-full \
+    curl  \
+    p7zip-full \
     && rm -rf /var/lib/apt/lists/* 
-  
+
 # NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update && \
     apt-get install -qy --allow-unauthenticated nodejs \
     && rm -rf /var/lib/apt/lists/* 
