@@ -27,6 +27,8 @@ RUN chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 #Install
 RUN apt-get update && \
     apt-get install -qy --allow-unauthenticated \ 
+    dotnet-sdk-2.2 \
+    dotnet-sdk-3.0 \
     dotnet-sdk-3.1 \
     && rm -rf /var/lib/apt/lists/* 
 
