@@ -10,11 +10,11 @@ RUN rm -rf /var/lib/apt/lists/*
 #Base
 RUN apt-get update && \ 
     apt-get install -y \
-                    wget  \
-                    p7zip-full \
-                    apt-transport-https \
+    wget  \
+    p7zip-full \
+    apt-transport-https \
     && rm -rf /var/lib/apt/lists/* 
-  
+
 #Dotnet
 RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
 RUN mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
@@ -27,7 +27,7 @@ RUN chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 #Install
 RUN apt-get update && \
     apt-get install -qy --allow-unauthenticated \ 
-                    dotnet-sdk-3.0 \
+    dotnet-sdk-3.1 \
     && rm -rf /var/lib/apt/lists/* 
 
 
