@@ -32,3 +32,9 @@ docker pull craftingit/jenkins-agent-yarn:latest
 ```sh
 docker pull craftingit/jenkins-agent-dotnet:latest
 ```
+
+## jenkins-agent-releaser[![](https://badgen.net/badge/docker/Docker?icon&label=View%20on)](https://hub.docker.com/r/craftingit/jenkins-agent-releaser) ![](https://badgen.net/docker/pulls/craftingit/jenkins-agent-releaser?icon=docker&label=pulls) ![](https://badgen.net/docker/stars/craftingit/jenkins-agent-releaser?icon=docker&label=stars) ![](https://badgen.net/docker/size/craftingit/jenkins-agent-releaser?icon=docker)
+
+```sh
+docker pull craftingit/jenkins-agent-releaser:latest
+```
