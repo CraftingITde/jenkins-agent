@@ -9,6 +9,7 @@ script:
 - docker build -t agent-nodejs Container/nodejs/ 
 - docker build -t agent-yarn Container/yarn/ 
 - docker build -t agent-dotnet Container/dotnet/ 
+- docker build -t agent-releaser Container/releaser/ 
 
 deploy:
   - provider: script
