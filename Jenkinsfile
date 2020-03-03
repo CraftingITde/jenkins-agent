@@ -8,7 +8,7 @@ pipeline {
         stage("Deploy") {  
             when {  
                 branch 'master'
-              //  triggeredBy 'TimerTrigger' 
+                triggeredBy 'TimerTrigger' 
                 }
             steps {
                 script {
