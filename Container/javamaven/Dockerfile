@@ -1,4 +1,4 @@
-FROM jenkins/jnlp-slave:latest-jdk11
+FROM jenkins/jnlp-slave:3.29-1-jdk11
 LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 
@@ -10,10 +10,10 @@ RUN rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \ 
     apt-get install -y \
-                    --no-install-recommends \
-                    --allow-unauthenticated \
-                    maven \
-                    p7zip-full \
+    --no-install-recommends \
+    --allow-unauthenticated \
+    maven \
+    p7zip-full \
     && rm -rf /var/lib/apt/lists/* 
 
 USER jenkins
