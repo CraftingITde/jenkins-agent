@@ -1,4 +1,4 @@
-FROM jenkins/jnlp-slave:3.29-1-jdk11
+FROM jenkins/jnlp-slave:4.0.1-1-jdk11
 LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 
