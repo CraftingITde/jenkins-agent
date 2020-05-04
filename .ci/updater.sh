@@ -20,9 +20,8 @@ elses
 sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/docker/Dockerfile
 sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/dotnet/Dockerfile
 sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/javamaven/Dockerfile
-sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/nodejs/Dockerfile
 sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/releaser/Dockerfile
-sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/yarn/Dockerfile
+sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/javascript/Dockerfile
 
 git diff --exit-code . > /dev/null
 
@@ -38,8 +37,8 @@ else
     git add Container/docker/Dockerfile
     git add Container/dotnet/Dockerfile
     git add Container/javamaven/Dockerfile
-    git add Container/nodejs/Dockerfile
-    git add Container/yarn/Dockerfile
+    git add Container/javascript/Dockerfile
+    git add Container/releaser/Dockerfile
 	git commit --message "Bump to latest version ${VERSION}"
     git push https://$username:$password@$REPO_ADRESS HEAD:master
 fi

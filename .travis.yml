@@ -4,16 +4,15 @@ services:
   - docker
 
 script:
-- docker build -t agent-docker Container/docker/ 
-- docker build -t agent-javamaven Container/javamaven/ 
-- docker build -t agent-nodejs Container/nodejs/ 
-- docker build -t agent-yarn Container/yarn/ 
-- docker build -t agent-dotnet Container/dotnet/ 
-- docker build -t agent-releaser Container/releaser/ 
+  - docker build -t agent-docker Container/docker/
+  - docker build -t agent-javamaven Container/javamaven/
+  - docker build -t agent-releaser Container/releaser/
+  - docker build -t agent-dotnet Container/dotnet/
+  - docker build -t agent-releaser Container/releaser/
 
 deploy:
   - provider: script
-    script: bash .ci/docker_push_dev.sh 
+    script: bash .ci/docker_push_dev.sh
     on:
       branch: master
 
