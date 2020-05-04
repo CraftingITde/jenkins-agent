@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LATEST_VERSION=$(curl -s 'https://api.github.com/repos/jenkinsci/docker-jnlp-slave/releases/latest' | jq -r '.tag_name');
+LATEST_VERSION=$(curl -s 'https://api.github.com/repos/jenkinsci/docker-inbound-agent/releases/latest' | jq -r '.tag_name');
 CURRENT_VERSION=$(sed -nr 's/FROM jenkins\/jnlp-slave:*(.+)/\1/p' Container/docker/Dockerfile | tr -d '[:cntrl:]');
 REPO_ADRESS=$(git config --get remote.origin.url | sed 's~http[s]*://~~g')
 

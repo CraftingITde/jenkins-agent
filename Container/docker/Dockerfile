@@ -1,4 +1,4 @@
-FROM jenkins/jnlp-slave:4.3-1
+FROM jenkins/inbound-agent:4.3-1
 LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 # Install
@@ -10,16 +10,16 @@ RUN rm -rf /var/lib/apt/lists/*
 #Base
 RUN apt-get update && \ 
     apt-get install -y \
-                    --no-install-recommends \
-                    --allow-unauthenticated \
-                    apt-transport-https \
-                    ca-certificates \
-                    curl \ 
-                    gnupg2 \
-                    software-properties-common \
-                    p7zip-full \
+    --no-install-recommends \
+    --allow-unauthenticated \
+    apt-transport-https \
+    ca-certificates \
+    curl \ 
+    gnupg2 \
+    software-properties-common \
+    p7zip-full \
     && rm -rf /var/lib/apt/lists/* 
-  
+
 # Docker
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
