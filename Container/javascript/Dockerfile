@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:4.3-3
+FROM jenkins/inbound-agent:4.3-4
 LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 # Install
