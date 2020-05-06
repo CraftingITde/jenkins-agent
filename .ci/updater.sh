@@ -14,7 +14,7 @@ echo "  Repo:    ${REPO_ADRESS}"
 if [ "$LATEST_VERSION" = "null" ]; then
     echo "Latest: null!!!"
     exit -1
-elses
+fi
 
 # Set Version in all Docker Files
 sed -i -e "/FROM jenkins/s/${CURRENT_VERSION}/${LATEST_VERSION}/" Container/docker/Dockerfile
