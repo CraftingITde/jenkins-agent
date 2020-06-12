@@ -1,0 +1,27 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/Container/javascript"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/Container/releaser"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/Container/javamaven"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/Container/dotnet"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/Container/docker"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
