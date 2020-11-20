@@ -30,11 +30,8 @@ RUN apt-get update && \
     dotnet-sdk-2.2 \
     dotnet-sdk-3.0 \
     dotnet-sdk-3.1 \
+    dotnet-sdk-5.0 \
     && rm -rf /var/lib/apt/lists/* 
-
-
-#RUN chown -R jenkins:jenkins ~/.npm
-#RUN chown -R jenkins:jenkins ~/.config
 
 USER jenkins
 
