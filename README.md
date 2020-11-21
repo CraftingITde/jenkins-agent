@@ -31,3 +31,9 @@ docker pull craftingit/jenkins-agent-dotnet:latest
 ```sh
 docker pull craftingit/jenkins-agent-releaser:latest
 ```
+
+## jenkins-agent-dotnetblazor [![](https://badgen.net/badge/docker/Docker?icon&label=View%20on)](https://hub.docker.com/r/craftingit/jenkins-agent-dotnetblazor) ![](https://badgen.net/docker/pulls/craftingit/jenkins-agent-dotnetblazor?icon=docker&label=pulls) ![](https://badgen.net/docker/stars/craftingit/jenkins-agent-dotnetblazor?icon=docker&label=stars) ![](https://badgen.net/docker/size/craftingit/jenkins-agent-dotnetblazor?icon=docker)
+
+```sh
+docker pull craftingit/jenkins-agent-dotnetblazor:latest
+```
