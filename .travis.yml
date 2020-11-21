@@ -9,6 +9,7 @@ script:
   - docker build -t agent-releaser Container/releaser/
   - docker build -t agent-dotnet Container/dotnet/
   - docker build -t agent-javascript Container/javascript/
+  - docker build -t agent-dotnetblazor Container/dotnetblazor/
 
 deploy:
   - provider: script
