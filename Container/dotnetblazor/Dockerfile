@@ -23,6 +23,3 @@ RUN apt-get update && \
 
 
 USER jenkins
-
-RUN mkdir /tmp/workspace
-RUN mkdir /tmp/workspace/JenkinsTools
