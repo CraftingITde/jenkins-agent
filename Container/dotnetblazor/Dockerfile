@@ -19,6 +19,7 @@ RUN apt-get update && \
     nodejs \
     yarn \
     make \
+    build-essential \
     && rm -rf /var/lib/apt/lists/* 
 
 
