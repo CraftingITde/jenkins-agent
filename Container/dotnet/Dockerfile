@@ -16,7 +16,12 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/* 
     
  # Fix .net5 CA Fail
- RUN apt-get reinstall ca-certificates
+RUN echo "deb http://deb.debian.org/debian bullseye main" >> /etc/apt/sources.list \
+&& apt-get update \
+&& apt-get install -y --no-install-recommends \
+     ca-certificates \
+&& rm -rf /var/lib/apt/lists/* \
+&& sed -i '$ d' /etc/apt/sources.list
 
 #Dotnet
 RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
