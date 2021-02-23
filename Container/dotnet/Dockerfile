@@ -14,6 +14,9 @@ RUN apt-get update && \
     p7zip-full \
     apt-transport-https \
     && rm -rf /var/lib/apt/lists/* 
+    
+ # Fix .net5 CA Fail
+ RUN apt-get reinstall ca-certificates
 
 #Dotnet
 RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
