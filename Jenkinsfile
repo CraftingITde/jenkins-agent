@@ -3,7 +3,12 @@
 pipeline {
 	agent { label 'RELEASE' }
     triggers { cron('H */12 * * * ') }
-    options { disableConcurrentBuilds() }
+    options { 
+	    disableConcurrentBuilds(),
+      	    timeout(time: 30, unit: 'MIMUTES'),
+            disableResume()
+    }
+
 	stages{
         stage("Deploy") {  
             when {  
