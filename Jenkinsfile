@@ -4,8 +4,8 @@ pipeline {
 	agent { label 'RELEASE' }
     triggers { cron('H */12 * * * ') }
     options { 
-	    disableConcurrentBuilds(),
-      	    timeout(time: 30, unit: 'MIMUTES'),
+	    disableConcurrentBuilds()
+      	    timeout(time: 30, unit: 'MIMUTES')
             disableResume()
     }
 
