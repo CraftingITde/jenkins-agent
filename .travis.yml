@@ -10,6 +10,7 @@ script:
   - docker build -t agent-dotnet Container/dotnet/
   - docker build -t agent-javascript Container/javascript/
   - docker build -t agent-dotnetblazor Container/dotnetblazor/
+  - docker build -t agent-javaandroid Container/javaandroid/
 
 deploy:
   - provider: script
