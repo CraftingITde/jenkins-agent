@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get install -y \
     wget  \
     p7zip-full \
+    gpg \ 
     apt-transport-https \
     && rm -rf /var/lib/apt/lists/* 
     
