@@ -6,6 +6,8 @@ docker tag agent-dotnet craftingit/jenkins-agent-dotnet:$TRAVIS_TAG
 docker tag agent-releaser craftingit/jenkins-agent-releaser:$TRAVIS_TAG
 docker tag agent-dotnetblazor craftingit/jenkins-agent-dotnetblazor:$TRAVIS_TAG
 docker tag agent-javaandroid craftingit/jenkins-agent-javaandroid:$TRAVIS_TAG
+docker tag agent-javaandroidcordova craftingit/jenkins-agent-javaandroidcordova:$TRAVIS_TAG
+
 
 
 if [ ! "$TRAVIS_TAG" == "dev" ];
@@ -17,6 +19,7 @@ then
     docker tag agent-releaser craftingit/jenkins-agent-releaser:latest
     docker tag agent-dotnetblazor craftingit/jenkins-agent-dotnetblazor:latest
     docker tag agent-javaandroid craftingit/jenkins-agent-javaandroid:latest
+docker tag agent-javaandroidcordova craftingit/jenkins-agent-javaandroidcordova:latest
 fi
 
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
@@ -28,3 +31,4 @@ docker push craftingit/jenkins-agent-dotnet
 docker push craftingit/jenkins-agent-releaser
 docker push craftingit/jenkins-agent-dotnetblazor
 docker push craftingit/jenkins-agent-javaandroid
+docker push craftingit/jenkins-agent-javaandroidcordova

@@ -11,6 +11,7 @@ script:
   - docker build -t agent-javascript Container/javascript/
   - docker build -t agent-dotnetblazor Container/dotnetblazor/
   - docker build -t agent-javaandroid Container/javaandroid/
+  - docker build -t agent-javaandroidcordova Container/javaandroidcordova/
 
 deploy:
   - provider: script
