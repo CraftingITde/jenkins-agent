@@ -1,0 +1,93 @@
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-builds
+
+steps:
+- name: Docker  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-docker
+    context: Container/docker/
+    dockerfile: Container/docker/Dockerfile
+    auto_tag: true
+- name: JavaMaven  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/nextcloud-cron
+    context: craftingit/jenkins-agent-javamaven
+    dockerfile: Container/javamaven/Dockerfile
+    auto_tag: true
+- name: Releaser 
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-releaser
+    context: Container/releaser/
+    dockerfile: Container/releaser/Dockerfile
+    auto_tag: true 
+- name: Dotnet 
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-dotnet
+    context: Container/dotnet/
+    dockerfile: Container/dotnet/Dockerfile
+    auto_tag: true
+- name: javascript 
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-javascript
+    context: Container/javascript/
+    dockerfile: Container/javascript/Dockerfile
+    auto_tag: true
+- name: dotnetblazor 
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-javascript
+    context: Container/dotnetblazor/
+    dockerfile: Container/dotnetblazor/Dockerfile
+    auto_tag: true
+- name: javaandroid 
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-javaandroid
+    context: Container/javaandroid/
+    dockerfile: Container/javaandroid/Dockerfile
+    auto_tag: true
+- name: javaandroidcordova 
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: craftingit/jenkins-agent-javaandroidcordova
+    context: Container/javaandroidcordova/
+    dockerfile: Container/javaandroidcordova/Dockerfile
+    auto_tag: true

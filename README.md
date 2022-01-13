@@ -1,4 +1,4 @@
-# jenkins-agent [![Build Status](https://travis-ci.com/CraftingITde/jenkins-agent.svg?branch=master)](https://travis-ci.com/CraftingITde/jenkins-agent) ![](https://badgen.net/github/release/craftingitde/jenkins-agent/stable)
+# jenkins-agent [![Build Status](https://drone.craftingit.de/api/badges/CraftingITde/jenkins-agent/status.svg)](https://drone.craftingit.de/CraftingITde/jenkins-agent) ![](https://badgen.net/github/release/craftingitde/jenkins-agent/stable)
 
 ## jenkins-agent-docker [![](https://badgen.net/badge/docker/Docker?icon&label=View%20on)](https://hub.docker.com/r/craftingit/jenkins-agent-docker) ![](https://badgen.net/docker/pulls/craftingit/jenkins-agent-docker?icon=docker&label=pulls) ![](https://badgen.net/docker/stars/craftingit/jenkins-agent-docker?icon=docker&label=stars) ![](https://badgen.net/docker/size/craftingit/jenkins-agent-docker?icon=docker)
 
