@@ -37,3 +37,15 @@ docker pull craftingit/jenkins-agent-releaser:latest
 ```sh
 docker pull craftingit/jenkins-agent-dotnetblazor:latest
 ```
+
+## jenkins-agent-javaandroid [![](https://badgen.net/badge/docker/Docker?icon&label=View%20on)](https://hub.docker.com/r/craftingit/jenkins-agent-javaandroid) ![](https://badgen.net/docker/pulls/craftingit/jenkins-agent-javaandroid?icon=docker&label=pulls) ![](https://badgen.net/docker/stars/craftingit/jenkins-agent-javaandroid?icon=docker&label=stars) ![](https://badgen.net/docker/size/craftingit/jenkins-agent-javaandroid?icon=docker)
+
+```sh
+docker pull craftingit/jenkins-agent-javaandroid:latest
+```
+
+## jenkins-agent-javaandroidcordova [![](https://badgen.net/badge/docker/Docker?icon&label=View%20on)](https://hub.docker.com/r/craftingit/jenkins-agent-javaandroidcordova) ![](https://badgen.net/docker/pulls/craftingit/jenkins-agent-dotnjavaandroidcordovaetblazor?icon=docker&label=pulls) ![](https://badgen.net/docker/stars/craftingit/jenkins-agent-javaandroidcordova?icon=docker&label=stars) ![](https://badgen.net/docker/size/craftingit/jenkins-agent-javaandroidcordova?icon=docker)
+
+```sh
+docker pull craftingit/jenkins-agent-javaandroidcordova:latest
+```

@@ -2,6 +2,9 @@ kind: pipeline
 type: kubernetes
 name: jenkins-agent-builds
 
+concurrency:
+  limit: 1
+
 steps:
 - name: Docker  
   image: plugins/docker
