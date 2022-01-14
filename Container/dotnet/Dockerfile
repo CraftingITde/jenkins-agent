@@ -40,6 +40,7 @@ RUN apt-get update && \
     dotnet-sdk-3.0 \
     dotnet-sdk-3.1 \
     dotnet-sdk-5.0 \
+    dotnet-sdk-6.0 \
     && rm -rf /var/lib/apt/lists/* 
 
 USER jenkins

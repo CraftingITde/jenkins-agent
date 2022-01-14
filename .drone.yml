@@ -34,8 +34,8 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: craftingit/nextcloud-cron
-    context: craftingit/jenkins-agent-javamaven
+    repo: craftingit/jenkins-agent-javamaven
+    context: Container/javamaven/
     dockerfile: Container/javamaven/Dockerfile
     auto_tag: true
 
