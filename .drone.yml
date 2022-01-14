@@ -1,6 +1,6 @@
 kind: pipeline
 type: kubernetes
-name: jenkins-agent-builds
+name: jenkins-agent-docker
 
 concurrency:
   limit: 1
@@ -17,6 +17,16 @@ steps:
     context: Container/docker/
     dockerfile: Container/docker/Dockerfile
     auto_tag: true
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-javamaven
+
+concurrency:
+  limit: 1
+
+steps:    
 - name: JavaMaven  
   image: plugins/docker
   settings:
@@ -28,6 +38,16 @@ steps:
     context: craftingit/jenkins-agent-javamaven
     dockerfile: Container/javamaven/Dockerfile
     auto_tag: true
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-releaser
+
+concurrency:
+  limit: 1
+
+steps:    
 - name: Releaser 
   image: plugins/docker
   settings:
@@ -39,6 +59,16 @@ steps:
     context: Container/releaser/
     dockerfile: Container/releaser/Dockerfile
     auto_tag: true 
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-dotnet
+
+concurrency:
+  limit: 1
+
+steps:    
 - name: Dotnet 
   image: plugins/docker
   settings:
@@ -50,6 +80,16 @@ steps:
     context: Container/dotnet/
     dockerfile: Container/dotnet/Dockerfile
     auto_tag: true
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-javascript
+
+concurrency:
+  limit: 1
+
+steps:    
 - name: javascript 
   image: plugins/docker
   settings:
@@ -61,6 +101,16 @@ steps:
     context: Container/javascript/
     dockerfile: Container/javascript/Dockerfile
     auto_tag: true
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-dotnetblazor
+
+concurrency:
+  limit: 1
+
+steps:    
 - name: dotnetblazor 
   image: plugins/docker
   settings:
@@ -68,10 +118,20 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: craftingit/jenkins-agent-javascript
+    repo: craftingit/jenkins-agent-dotnetblazor
     context: Container/dotnetblazor/
     dockerfile: Container/dotnetblazor/Dockerfile
     auto_tag: true
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-javaandroid
+
+concurrency:
+  limit: 1
+
+steps:   
 - name: javaandroid 
   image: plugins/docker
   settings:
@@ -83,6 +143,16 @@ steps:
     context: Container/javaandroid/
     dockerfile: Container/javaandroid/Dockerfile
     auto_tag: true
+
+----
+kind: pipeline
+type: kubernetes
+name: jenkins-agent-javaandroidcordova
+
+concurrency:
+  limit: 1
+
+steps:  
 - name: javaandroidcordova 
   image: plugins/docker
   settings:
