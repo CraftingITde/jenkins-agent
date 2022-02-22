@@ -13,6 +13,7 @@ RUN apt-get update && \
     --allow-unauthenticated \
     wget \
     unzip \
+    curl \
     && rm -rf /var/lib/apt/lists/* 
 
 

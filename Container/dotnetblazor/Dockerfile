@@ -13,6 +13,7 @@ RUN apt-get update && \
     wget  \
     p7zip-full \
     gpg \ 
+    curl \
     apt-transport-https \
     && rm -rf /var/lib/apt/lists/* 
     
@@ -36,9 +37,6 @@ RUN chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 #Install
 RUN apt-get update && \
     apt-get install -qy --allow-unauthenticated \ 
-    dotnet-sdk-2.2 \
-    dotnet-sdk-3.0 \
-    dotnet-sdk-3.1 \
     dotnet-sdk-5.0 \
     dotnet-sdk-6.0 
 
