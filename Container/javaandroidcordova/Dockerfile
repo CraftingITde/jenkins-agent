@@ -49,7 +49,12 @@ RUN apt-get update && \
     yarn \
     make \
     build-essential \
+    curl \
+    python \
     && rm -rf /var/lib/apt/lists/* 
+
+#Pip
+RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py && python2 get-pip.py
 
 #android sdk
 ENV ANDROID_SDK_ZIP commandlinetools-linux-7583922_latest.zip
