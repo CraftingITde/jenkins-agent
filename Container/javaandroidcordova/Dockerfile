@@ -1,15 +1,11 @@
 FROM jenkins/inbound-agent:4.9-1
 LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
-
 USER root
 
 #Fix Apt Cache
 RUN rm -rf /var/lib/apt/lists/* 
 
-RUN apt-get upgrade
-
-RUN apt-get update 
 RUN apt-get install -y \
     --no-install-recommends \
     --allow-unauthenticated \
@@ -23,7 +19,6 @@ RUN apt-get install -y \
 ENV JAVA_HOME_8 /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
 ENV PATH $PATH:$JAVA_HOME_8/bin
 
-RUN apt-get update
 RUN apt install -y apt-transport-https ca-certificates wget dirmngr gnupg software-properties-common
 RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
 RUN add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
