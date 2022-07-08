@@ -1,5 +1,5 @@
 FROM jenkins/inbound-agent:4.11.2-4
-LABEL maintainer="Kai Struessmann <kstruesmann@craftingit.de>"
+LABEL maintainer="Kai Struessmann <kstruessmann@craftingit.de>"
 
 # Install
 USER root
