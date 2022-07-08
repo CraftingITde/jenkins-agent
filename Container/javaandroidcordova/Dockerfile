@@ -3,6 +3,9 @@ LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 USER root
 
+RUN apt-get update
+RUN apt-get upgrade
+
 #Fix Apt Cache
 RUN rm -rf /var/lib/apt/lists/* 
 
