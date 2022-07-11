@@ -1,11 +1,7 @@
 FROM jenkins/inbound-agent:4.9-1-jdk11
-LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
+LABEL maintainer="Kai Struessmann <kstruessmann@craftingit.de>"
 
-
-USER root
-
-#Fix Apt Cache
-RUN rm -rf /var/lib/apt/lists/* 
+USER user
 
 RUN apt-get update && \ 
     apt-get install -y \
@@ -14,9 +10,8 @@ RUN apt-get update && \
     wget \
     unzip \
     curl \
-    && rm -rf /var/lib/apt/lists/* 
-
-
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV ANDROID_SDK_ZIP commandlinetools-linux-7583922_latest.zip
 ENV ANDROID_SDK_ZIP_URL https://dl.google.com/android/repository/$ANDROID_SDK_ZIP
@@ -40,12 +35,6 @@ RUN echo yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platform-tools" "platf
 RUN echo yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platform-tools" "build-tools;26.0.3"
 RUN echo yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platform-tools" "platforms;android-26"
 
-
-RUN chown -R jenkins $ANDROID_SDK_ROOT
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-USER jenkins
-
+# Jenkins Preparation
 RUN mkdir /tmp/workspace
 RUN mkdir /tmp/workspace/JenkinsTools
