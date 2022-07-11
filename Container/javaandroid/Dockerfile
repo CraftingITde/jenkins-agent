@@ -1,7 +1,7 @@
 FROM jenkins/inbound-agent:4.9-1-jdk11
 LABEL maintainer="Kai Struessmann <kstruessmann@craftingit.de>"
 
-USER user
+USER jenkins
 
 RUN apt-get update && \ 
     apt-get install -y \
