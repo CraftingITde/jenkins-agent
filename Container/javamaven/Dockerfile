@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:4.13-2-jdk11
+FROM jenkins/inbound-agent:3063.v26e24490f041-2-jdk11
 LABEL maintainer="Kai Struessmann <kstrusmann@craftingit.de>"
 
 
